@@ -2,7 +2,7 @@ export class Snowflake {
   seq: number;
   nodeId: number;
   epoch: number;
-  constructor(opts: {nodeId?: number}) {
+  constructor(opts: {nodeId: number}) {
     opts = opts || {nodeId: 1023};
     this.seq = 0;
     this.nodeId = opts.nodeId;
@@ -15,7 +15,7 @@ export class Snowflake {
     return this.binaryToID(binary);
   }
 
-  private binaryToID(num) {
+  private binaryToID(num: number) {
     let dec = '';
 
     while (num.length > 50) {
