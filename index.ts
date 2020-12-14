@@ -2,7 +2,7 @@ export class Snowflake {
   seq: number;
   nodeId: number;
   epoch: number;
-  constructor(opts) {
+  constructor(opts: {nodeId?: number}) {
     opts = opts || {nodeId: 1023};
     this.seq = 0;
     this.nodeId = opts.nodeId;
