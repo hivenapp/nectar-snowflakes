@@ -15,7 +15,7 @@ export class Snowflake {
     return this.binaryToID(binary);
   }
 
-  private binaryToID(num: number) {
+  private binaryToID(num: number): string {
     let dec = '';
 
     while (num.length > 50) {
