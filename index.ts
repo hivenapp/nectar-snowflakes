@@ -1,7 +1,6 @@
 export class Snowflake {
   seq: number;
   nodeId: number;
-  lastTime: number;
   epoch: number;
   constructor(opts) {
     opts = opts || {nodeId: 1023};
