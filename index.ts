@@ -15,7 +15,7 @@ export class Snowflake {
     return this.binaryToID(binary);
   }
 
-  private binaryToID(num: number): string {
+  private binaryToID(num: string): string {
     let dec = '';
 
     while (num.length > 50) {
@@ -26,12 +26,13 @@ export class Snowflake {
       num = Math.floor(high / 10).toString(2) + Math.floor(low / 10).toString(2).padStart(32, '0');
     }
 
-    num = parseInt(num, 2);
-    while (num > 0) {
-      dec = (num % 10).toString() + dec;
-      num = Math.floor(num / 10);
+    let num2: number = parseInt(num, 2);
+    while (num2 > 0) {
+      dec = (num2 % 10).toString() + dec;
+      num2 = Math.floor(num2 / 10);
     }
 
     return dec;
   }
 }
+
